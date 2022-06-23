@@ -1,0 +1,54 @@
+*******************************
+To Do
+****************************************************************************************************************************
+
+create button "ir para configurações"
+multislider it's not working as desirable
+create match screen
+uses lodash to prevent double button press
+create pull to refresh on matches
+if someone sends me a message and I don't have that profile in my matchedProfiles, teh app will crash, so downlaod matchedProfiles again
+improve profileTab layout, center user image and cthe buttons
+
+work on push notifications
+
+on notification.js I reaplaced dangerNotification and successNotification by Alerts, create a friendly way to show messages
+
+tratar erros do servidor de maneira mais amigável, usando imagens legais como os macaquinhos do youtube
+
+check if token has expired before send message to firebase
+
+remove this SET_SELECTED_CONFIG_MENU and everything that has a connection with it
+
+if is open in one device, cannot be opened in another. Otherwise it's goind to behave not as expected
+
+****************************************************************************************************************************
+Importants
+****************************************************************************************************************************
+
+
+react-native-progress sometimes stuck on zero the percentage. To fix that, enter on this lib folder on node_modules and change the Circle.js file from this: {formatText(progressValue)} to this: {progress ? formatText(progress._value) : 0}
+
+react-native-swipe-cards sometimes show a random alert, to fix that go to it's folder on node_modules and change onClickHandler: () => { alert('tap') }, to console.log('tap')
+
+
+****************************************************************************************************************************
+Troubleshooting
+****************************************************************************************************************************
+
+
+ERROR: ".dex file cannot exceed 64K."
+SOLUTION: Set 'multiDexEnabled true' into 'module/build.gradle'
+EX: 'android {
+
+    defaultConfig {
+        ...
+
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    ...
+}'
+
+
+****************************************************************************************************************************

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1047242635525",
+    "firebase_url": "https://appnamoro.firebaseio.com",
+    "project_id": "appnamoro",
+    "storage_bucket": "appnamoro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1047242635525:android:76e2d65910b8dcf6105f6c",
+        "android_client_info": {
+          "package_name": "com.rnappnamorofront"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1047242635525-72mrvgr1vookm5re1f5facaaqhk51ju1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rnappnamorofront",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "1047242635525-fkelb7038u3c4n7q19iuvi88r856lqgm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBI_l5Zb-pMAFnGKZMYhWqcMWMSQ0LPnig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1047242635525-fkelb7038u3c4n7q19iuvi88r856lqgm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
