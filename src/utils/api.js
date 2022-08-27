@@ -32,7 +32,7 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   async (response) => {
 
-    console.log(response);
+    console.warn(response);
 
     return response;
   }

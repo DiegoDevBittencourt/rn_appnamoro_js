@@ -43,15 +43,15 @@ export default function SocialButtons() {
         } catch (error) {
 
             if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-                console.log('user cancelled the login flow');
+                console.warn('user cancelled the login flow');
             } else if (error.code === statusCodes.IN_PROGRESS) {
-                console.log('operation (e.g. sign in) is in progress already');
+                console.warn('operation (e.g. sign in) is in progress already');
             } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-                console.log('play services not available or outdated');
+                console.warn('play services not available or outdated');
             } else {
                 // some other error happened
-                console.log(error);
-                console.log('error code', error.code);
+                console.warn(error);
+                console.warn('error code', error.code);
             }
         }
     };
@@ -61,7 +61,7 @@ export default function SocialButtons() {
             function (result) {
 
                 if (result.isCancelled) {
-                    console.log("login is cancelled.");
+                    console.warn("login is cancelled.");
                 } else {
 
                     AccessToken.getCurrentAccessToken().then(
@@ -72,7 +72,7 @@ export default function SocialButtons() {
                 }
             },
             function (error) {
-                console.log("Login fail with error: " + error);
+                console.warn("Login fail with error: " + error);
             }
         );
     }

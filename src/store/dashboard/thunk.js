@@ -7,31 +7,6 @@ import api from '@utils/api';
 import { decodeJwtToken } from '~/utils/functions';
 import { successNotification } from '~/utils/notifications';
 
-export function uploadImageToServer(imageData, selectedFile) {
-    return async (dispatch, getState) => {
-
-        const { id: userId } = getState().user.userData;
-
-        try {
-            await api.post(`users/user_images/${userId}`, imageData, {
-                onUploadProgress: e => {
-
-                    const progress = parseInt(Math.round((e.loaded * 100) / e.total));
-                    dispatch(dashboardActions.updateUploadingImagesPreview({ ...selectedFile, progress }));
-                }
-            });
-
-            dispatch(dashboardActions.updateUploadingImagesPreview(null, selectedFile.id));
-            dispatch(userThunk.getUserData(true));
-
-        } catch (err) {
-
-            dispatch(dashboardActions.updateUploadingImagesPreview(null, selectedFile.id));
-            dispatch(errorThunk.handleThunkError(err));
-        }
-    }
-}
-
 export function sendNewUserContact(name, email, subject, message) {
     return async (dispatch) => {
 
@@ -124,5 +99,62 @@ export function deleteAccount() {
         } catch (err) {
             dispatch(errorThunk.handleThunkError(err));
         }
+    }
+}
+
+export function uploadImageToServer(imageData, selectedFile) {
+    return async (dispatch, getState) => {
+
+        const { id: userId } = getState().user.userData;
+
+        try {
+            await api.post(`users/user_images/${userId}`, imageData, {
+                onUploadProgress: e => {
+
+                    const progress = parseInt(Math.round((e.loaded * 100) / e.total));
+                    dispatch(updateImagesPreview({ ...selectedFile, progress }));
+                }
+            });
+
+            dispatch(removeFromImagesPreviewById(selectedFile.id));
+            dispatch(userThunk.getUserData(true));
+
+        } catch (err) {
+
+            dispatch(removeFromImagesPreviewById(selectedFile.id));
+            dispatch(errorThunk.handleThunkError(err));
+        }
+    }
+}
+
+export function updateImagesPreview(payload) {
+    return async (dispatch, getState) => {
+
+        const { uploadingImagesPreview } = getState().dashboard;
+
+        if (uploadingImagesPreview.some(item => item.id === payload.id)) {
+            const newArr = uploadingImagesPreview?.map(item => {
+                if (item?.id === payload?.id)
+                    return { ...item, progress: payload?.progress };
+
+                return item;
+            });
+
+            dispatch(dashboardActions.updateUploadingImagesPreview(newArr));
+        }
+        else {
+            const newArr = [...uploadingImagesPreview, payload];
+            dispatch(dashboardActions.updateUploadingImagesPreview(newArr));
+        }
+    }
+}
+
+export function removeFromImagesPreviewById(id) {
+    return async (dispatch, getState) => {
+
+        const { uploadingImagesPreview } = getState().dashboard;
+
+        const newArr = uploadingImagesPreview.filter(item => item.id !== id);
+        dispatch(dashboardActions.updateUploadingImagesPreview(newArr));
     }
 }

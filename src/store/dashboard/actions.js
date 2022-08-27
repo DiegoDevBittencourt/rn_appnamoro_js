@@ -1,10 +1,9 @@
 import * as dashboardTypes from './types';
 
-export function updateUploadingImagesPreview(image, removeImageByThisId) {
+export function updateUploadingImagesPreview(imagesArray) {
     return {
         type: dashboardTypes.UPLOADING_IMAGES,
-        image,
-        removeImageByThisId
+        imagesArray
     };
 }
 

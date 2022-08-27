@@ -1,10 +1,11 @@
 import React from 'react';
 import firebase from 'firebase';
+import reduxThunk from 'redux-thunk'
+import EStyleSheet from 'react-native-extended-stylesheet';
+import FlashMessage from 'react-native-flash-message';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider, useSelector } from 'react-redux';
-import reduxThunk from 'redux-thunk'
 import { ThemeProvider } from 'styled-components';
-import EStyleSheet from 'react-native-extended-stylesheet';
 
 import {
   REACT_APP_FIREBASE_API_KEY,
@@ -52,6 +53,8 @@ export default function App() {
       <TheLoader />
 
       <Application />
+
+      <FlashMessage position='top' />
 
     </Provider>
   </ThemeProvider>

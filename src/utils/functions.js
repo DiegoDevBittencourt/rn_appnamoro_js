@@ -7,24 +7,32 @@ export function handleError(err) {
     try {
         const somethingIsWrong = 'Ops, parece que algo saiu mal. Tente novamente.';
 
+        const errorMessage = err?.message ||
+            err?.msg ||
+            err?.data?.err?.message ||
+            err?.response?.data?.err?.message ||
+            err?.response?.data?.message;
+
+        dangerNotification(errorMessage);
+
         if (typeof err?.response?.data === "string") {
             let helper = err?.response?.data.split(' ');
 
             if (helper[0] !== '<!DOCTYPE' && err?.response?.status == 400)
                 dangerNotification(err?.response?.data);
             else {
-                console.log(err);
-                console.log(somethingIsWrong + ' - ' + err?.response?.data);
+                console.warn(err);
+                console.warn(somethingIsWrong + ' - ' + err?.response?.data);
             }
 
         } else {
-            console.log(err);
-            console.log(somethingIsWrong + ' - Ref: ' + err);
+            console.warn(err);
+            console.warn(somethingIsWrong + ' - Ref: ' + err);
         }
 
     } catch (error) {
-        console.log(err);
-        console.log(error);
+        console.warn(err);
+        console.warn(error);
     }
 }
 

@@ -67,7 +67,7 @@ export default function ConfigurationContent() {
     }
 
     const setSelectedConfigMenuAndChangeScreen = (selectedMenu, selectedConfigMenuTitle) => {
-        dispatch(dashboardActions.setSelectedConfigMenu(selectedMenu, selectedConfigMenuTitle));
+        dispatch(dashboardActions.setSelectedConfigMenu({ selectedMenu, selectedConfigMenuTitle }));
 
         changeScreen('ConfigurationEditor');
     }
