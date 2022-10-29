@@ -9,7 +9,7 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 import { REACT_APP_API_URL } from 'react-native-expand-dotenv';
-
+console.log('REACT_APP_API_URL', REACT_APP_API_URL)
 const api = axios.create({
   baseURL: REACT_APP_API_URL,
   headers: {

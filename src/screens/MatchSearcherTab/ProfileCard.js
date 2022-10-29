@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Carousel from 'react-native-looped-carousel';
+// import Carousel from 'react-native-looped-carousel';
 import { Dimensions } from 'react-native';
 
 import noProfile from '@assets/noProfile.png';
@@ -57,9 +57,9 @@ export default function ProfileCard({ firstName, lastName, age, userImages, dist
         width: 30,
         alignItems: 'flex-end',
     };
-
+    rr
     return <ProfileCardInfo>
-        <Carousel
+        {/* <Carousel
             style={{ width: '100%', height: '100%' }}
             arrowStyle={{ height: '100%', justifyContent: 'center' }}
             pageInfoTextStyle={{ color: 'white' }}
@@ -80,7 +80,16 @@ export default function ProfileCard({ firstName, lastName, age, userImages, dist
                     :
                     <UserImage source={noProfile} />
             }
-        </Carousel>
+        </Carousel> */}
+
+        {/* temporary fix, find a Carousel substitute later */}
+        {
+            userImages?.length > 0 ?
+                userImages.map(image => <UserImage key={generateRandomKey()} source={{ uri: image.imageUrl }} />)
+                :
+                <UserImage source={noProfile} />
+        }
+        {/* temporary fix */}
 
         <NameAge style={textShadow}>{`${firstName} ${lastName}, ${age}`}</NameAge>
 

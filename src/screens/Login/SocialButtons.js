@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
-import { AccessToken, LoginManager } from 'react-native-fbsdk';
+// import { AccessToken, LoginManager } from 'react-native-fbsdk';
 import { REACT_APP_GOOGLE_CLIENT_ID } from 'react-native-expand-dotenv';
 import { GoogleSignin, statusCodes } from '@react-native-community/google-signin';
 
@@ -57,24 +57,24 @@ export default function SocialButtons() {
     };
 
     const facebookLogin = () => {
-        return LoginManager.logInWithPermissions(["public_profile"]).then(
-            function (result) {
+        // return LoginManager.logInWithPermissions(["public_profile"]).then(
+        //     function (result) {
 
-                if (result.isCancelled) {
-                    console.warn("login is cancelled.");
-                } else {
+        //         if (result.isCancelled) {
+        //             console.warn("login is cancelled.");
+        //         } else {
 
-                    AccessToken.getCurrentAccessToken().then(
-                        (data) => {
-                            dispatch(authThunk.signInOauth(data.accessToken.toString(), 'facebook'));
-                        }
-                    )
-                }
-            },
-            function (error) {
-                console.warn("Login fail with error: " + error);
-            }
-        );
+        //             AccessToken.getCurrentAccessToken().then(
+        //                 (data) => {
+        //                     dispatch(authThunk.signInOauth(data.accessToken.toString(), 'facebook'));
+        //                 }
+        //             )
+        //         }
+        //     },
+        //     function (error) {
+        //         console.warn("Login fail with error: " + error);
+        //     }
+        // );
     }
 
     return <SocialButtonsContainer>
