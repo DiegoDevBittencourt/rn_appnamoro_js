@@ -37,3 +37,5 @@ You'll find a betta version .apk of this app at the following link: https://www.
 ![](https://i.imgur.com/2yLy5kB.png)
 ![](https://i.imgur.com/0gxIENW.png)
 ![](https://i.imgur.com/55ImOV6.png)
+
+If this repo helped you in any way and you feel grateful, please free to make a donation: 1HcWHMFhbK4gJfoihwng4fi5hkRJdHEoci (this is my bitcoin wallet)
