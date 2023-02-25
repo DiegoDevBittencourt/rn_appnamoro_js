@@ -1,8 +1,10 @@
-PS: THIS REPO IT'S NOT FINISHED YET
-
 A Tinder like app made with React Native/NodeJS
 
 https://appnamoro.com
+
+You can download a demo app here:
+<br></br>
+https://play.google.com/store/apps/details?id=com.rn_appnamoro_ts
 
 To be able to test it in your machine, follow this steps:
 
@@ -13,14 +15,6 @@ REACT_APP_API_URL=http://localhost:3333/
 REACT_APP_GEOCODE_API_KEY=your_geocode_api_here
 REACT_APP_FACEBOOK_APP_ID=your_facebook_app_id_here
 REACT_APP_GOOGLE_CLIENT_ID=your_google_client_id_here
-REACT_APP_FIREBASE_API_KEY=''
-REACT_APP_FIREBASE_AUTHDOMAIN=''
-REACT_APP_FIREBASE_DATABASEURL=''
-REACT_APP_FIREBASE_PROJECTID=''
-REACT_APP_FIREBASE_STORAGEBUCKET=''
-REACT_APP_FIREBASE_MESSAGINGSENDERID=''
-REACT_APP_FIREBASE_APPID=''
-REACT_APP_FIREBASE_MEASUREMENTID=''
 ```
 3 - Then you'll need to install the dependencies before run the project, paste this code on CMD: `yarn install`;<br/>
 4 - Now open an android emulator and paste this code on CMD: `yarn start`;<br/>
