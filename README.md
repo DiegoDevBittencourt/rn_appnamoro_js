@@ -4,7 +4,7 @@ https://appnamoro.com
 
 You can download a demo app here:
 <br></br>
-https://play.google.com/store/apps/details?id=com.rn_appnamoro_ts
+https://www.mediafire.com/file/4gtam7zhs1llcjo/app_namoro_1.4.apk/file
 
 To be able to test it in your machine, follow this steps:
 
